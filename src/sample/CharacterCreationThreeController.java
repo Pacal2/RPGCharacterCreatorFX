@@ -52,8 +52,8 @@ public class CharacterCreationThreeController implements Initializable {
         int baseCharisma = playerCharacter.getCharisma();
 
         //Set up spending points
-        int pointsLeft = 12;
-        int maxAddStatistic = 5;
+        int pointsLeft = 10;
+        int maxAddStatistic = 4;
 
         //Strength Spinner
         SpinnerValueFactory<Integer> strengthValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(baseStrength, baseStrength + maxAddStatistic, baseStrength);
