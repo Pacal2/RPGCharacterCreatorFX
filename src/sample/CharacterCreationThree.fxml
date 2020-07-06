@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CharacterCreationThreeController">
+   <children>
+      <VBox layoutX="438.0" layoutY="80.0" prefHeight="377.0" prefWidth="324.0" spacing="10.0">
+         <children>
+            <Label text="Statystyki:">
+               <font>
+                  <Font name="System Bold" size="48.0" />
+               </font>
+            </Label>
+            <GridPane prefHeight="301.0" prefWidth="324.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="214.0" minWidth="10.0" prefWidth="214.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="10.0" prefWidth="85.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Siła:">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Spinner fx:id="strengthSpinner" GridPane.columnIndex="1" />
+                  <Label layoutX="10.0" layoutY="12.0" text="Kondycja:" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="12.0" text="Zręczność:" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="12.0" text="Inteligencja:" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="12.0" text="Percepcja:" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="132.0" text="Charyzma:" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Spinner layoutX="125.0" layoutY="13.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Spinner layoutX="10.0" layoutY="13.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Spinner layoutX="10.0" layoutY="13.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Spinner layoutX="10.0" layoutY="13.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Spinner layoutX="125.0" layoutY="133.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </GridPane>
+         </children>
+      </VBox>
+      <Button layoutX="1063.0" layoutY="709.0" mnemonicParsing="false" text="Next">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
