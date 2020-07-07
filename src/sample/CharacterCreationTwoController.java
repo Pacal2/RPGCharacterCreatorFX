@@ -46,7 +46,7 @@ public class CharacterCreationTwoController implements Initializable {
         characterManager.saveCharacterList(playerCharacter);
 
 
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationThree.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
 
         //Get stage information
