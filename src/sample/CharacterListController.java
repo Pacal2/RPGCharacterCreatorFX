@@ -16,6 +16,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class CharacterListController implements Initializable {
@@ -23,6 +25,7 @@ public class CharacterListController implements Initializable {
     @FXML private TableView<PlayerCharacter> tableView;
     @FXML private TableColumn<PlayerCharacter, String> raceColumn;
     @FXML private TableColumn<PlayerCharacter, String> professionColumn;
+    @FXML private TableColumn<PlayerCharacter, Map<String, Integer>> strengthColumn;
 
 
     @Override
@@ -31,6 +34,7 @@ public class CharacterListController implements Initializable {
         // Column set up
         raceColumn.setCellValueFactory(new PropertyValueFactory<PlayerCharacter, String>("Race"));
         professionColumn.setCellValueFactory(new PropertyValueFactory<PlayerCharacter, String>("Profession"));
+        strengthColumn.setCellValueFactory(new PropertyValueFactory<>("Stats"));
 
         //Data loading
 

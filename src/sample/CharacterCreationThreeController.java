@@ -3,39 +3,57 @@ package sample;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
-import javafx.scene.control.SpinnerValueFactory;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory;
+import javafx.stage.Stage;
 
 public class CharacterCreationThreeController implements Initializable {
 
+    //Spinners
     @FXML private Spinner strengthSpinner;
-    @FXML private Spinner enduranceSpinner;
     @FXML private Spinner dexteritySpinner;
+    @FXML private Spinner enduranceSpinner;
+
     @FXML private Spinner intelligenceSpinner;
-    @FXML private Spinner perceptionSpinner;
     @FXML private Spinner charismaSpinner;
+    @FXML private Spinner perceptionSpinner;
+
+    //Spinner list
+    private ArrayList<Spinner> attributeSpinners = new ArrayList<>();
 
     @FXML private Label numberOfPointsLeftLabel;
 
 
     //Set up spending points
-    private int maxPointsToSpend = 10;
-    private int maxAddStatistic = 4;
-    private IntegerProperty pointsRemaining = new SimpleIntegerProperty(maxPointsToSpend);
-
+    private final int maxPointsToSpend = 10;
+    private final int maxAddStatistic = 4;
+    private final IntegerProperty pointsRemaining = new SimpleIntegerProperty(maxPointsToSpend);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        // Set up Spinner List
+        attributeSpinners.add(strengthSpinner);
+        attributeSpinners.add(dexteritySpinner);
+        attributeSpinners.add(enduranceSpinner);
+        attributeSpinners.add(intelligenceSpinner);
+        attributeSpinners.add(charismaSpinner);
+        attributeSpinners.add(perceptionSpinner);
 
         // Set up player Character
         CharacterManager characterManager = new CharacterManager();
@@ -51,78 +69,69 @@ public class CharacterCreationThreeController implements Initializable {
 
         // Assign racial bonuses
         String playerRace = playerCharacter.getRace();
-        if (playerRace.equals("Człowiek")) playerCharacter.setCharisma(playerCharacter.getCharisma()+1);
-        if (playerRace.equals("Mutant")) playerCharacter.setStrength(playerCharacter.getStrength()+1);
-        if (playerRace.equals("Przybysz")) playerCharacter.setEndurance(playerCharacter.getEndurance()+1);
-        if (playerRace.equals("Android")) playerCharacter.setIntelligence(playerCharacter.getIntelligence()+1);
+        if (playerRace.equals("Człowiek")) attributeBonus(playerCharacter, "Charisma", 1);
+        if (playerRace.equals("Mutant")) attributeBonus(playerCharacter, "Strength", 1);
+        if (playerRace.equals("Przybysz")) attributeBonus(playerCharacter, "Endurance", 1);
+        if (playerRace.equals("Android")) attributeBonus(playerCharacter, "Intelligence", 1);
 
-        //Extract starting attributes:
-        int baseStrength = playerCharacter.getStrength();
-        int baseEndurance = playerCharacter.getEndurance();
-        int baseDexterity = playerCharacter.getDexterity();
-        int baseIntelligence = playerCharacter.getIntelligence();
-        int basePerception = playerCharacter.getPerception();
-        int baseCharisma = playerCharacter.getCharisma();
-
-        //Points Left
+        // Points Left
         numberOfPointsLeftLabel.textProperty().bind(Bindings.format("%d", pointsRemaining));
 
-        //Strength Spinner
-        SpinnerValueFactory.IntegerSpinnerValueFactory strengthValueFactory =
-                new SpinnerValueFactory.IntegerSpinnerValueFactory(baseStrength, baseStrength + maxAddStatistic, baseStrength);
-        strengthValueFactory.maxProperty().bind(Bindings.createIntegerBinding(
-                () -> pointsRemaining.get() + strengthValueFactory.getValue(),
-                pointsRemaining, strengthValueFactory.valueProperty()));
-        strengthValueFactory.valueProperty().addListener((obs, oldValue, newValue) ->
-                pointsRemaining.set(pointsRemaining.get() - newValue + oldValue));
-        this.strengthSpinner.setValueFactory(strengthValueFactory);
-        //Endurance Spinner
-        IntegerSpinnerValueFactory enduranceValueFactory =
-                new IntegerSpinnerValueFactory(baseEndurance, baseEndurance + maxAddStatistic, baseEndurance);
-        enduranceValueFactory.maxProperty().bind(Bindings.createIntegerBinding(
-                () -> pointsRemaining.get() + enduranceValueFactory.getValue(),
-                pointsRemaining, enduranceValueFactory.valueProperty()));
-        enduranceValueFactory.valueProperty().addListener((obs, oldValue, newValue) ->
-                pointsRemaining.set(pointsRemaining.get() - newValue + oldValue));
-        this.enduranceSpinner.setValueFactory(enduranceValueFactory);
-        //Dexterity Spinner
-        IntegerSpinnerValueFactory dexterityValueFactory =
-                new IntegerSpinnerValueFactory(baseDexterity, baseDexterity + maxAddStatistic, baseDexterity);
-        dexterityValueFactory.maxProperty().bind(Bindings.createIntegerBinding(
-                () -> pointsRemaining.get() + dexterityValueFactory.getValue(),
-                pointsRemaining, dexterityValueFactory.valueProperty()));
-        dexterityValueFactory.valueProperty().addListener((obs, oldValue, newValue) ->
-                pointsRemaining.set(pointsRemaining.get() - newValue + oldValue));
-        this.dexteritySpinner.setValueFactory(dexterityValueFactory);
-        //Intelligence Spinner
-        IntegerSpinnerValueFactory intelligenceValueFactory =
-                new IntegerSpinnerValueFactory(baseIntelligence, baseIntelligence + maxAddStatistic, baseIntelligence);
-        intelligenceValueFactory.maxProperty().bind(Bindings.createIntegerBinding(
-                () -> pointsRemaining.get() + intelligenceValueFactory.getValue(),
-                pointsRemaining, intelligenceValueFactory.valueProperty()));
-        intelligenceValueFactory.valueProperty().addListener((obs, oldValue, newValue) ->
-                pointsRemaining.set(pointsRemaining.get() - newValue + oldValue));
-        this.intelligenceSpinner.setValueFactory(intelligenceValueFactory);
-        //Perception Spinner
-        IntegerSpinnerValueFactory perceptionValueFactory =
-                new IntegerSpinnerValueFactory(basePerception, basePerception + maxAddStatistic, basePerception);
-        perceptionValueFactory.maxProperty().bind(Bindings.createIntegerBinding(
-                () -> pointsRemaining.get() + perceptionValueFactory.getValue(),
-                pointsRemaining, perceptionValueFactory.valueProperty()));
-        perceptionValueFactory.valueProperty().addListener((obs, oldValue, newValue) ->
-                pointsRemaining.set(pointsRemaining.get() - newValue + oldValue));
-        this.perceptionSpinner.setValueFactory(perceptionValueFactory);
-        //Charisma Spinner
-        IntegerSpinnerValueFactory charismaValueFactory =
-                new IntegerSpinnerValueFactory(baseCharisma, baseCharisma + maxAddStatistic, baseCharisma);
-        charismaValueFactory.maxProperty().bind(Bindings.createIntegerBinding(
-                () -> pointsRemaining.get() + charismaValueFactory.getValue(),
-                pointsRemaining, charismaValueFactory.valueProperty()));
-        charismaValueFactory.valueProperty().addListener((obs, oldValue, newValue) ->
-                pointsRemaining.set(pointsRemaining.get() - newValue + oldValue));
-        this.charismaSpinner.setValueFactory(charismaValueFactory);
+        // Spinner controller
+        int i = 0;
+        for(Map.Entry<String, Integer> attribute : playerCharacter.getStats().entrySet()) {
+            attributeSpinnerMethod(attributeSpinners.get(i), attribute.getValue());
+            System.out.println("Integer is " + i + attributeSpinners.get(i) + " and attribute is: " +attribute.getKey().toString() + "/n");
+            i++;
+        }
 
     }
 
+    private void attributeSpinnerMethod(Spinner spinner, int baseValue) {
+        final int maxAttribute = baseValue + maxAddStatistic;
+        IntegerSpinnerValueFactory valueFactory = new IntegerSpinnerValueFactory(baseValue, maxAttribute, baseValue);
+        valueFactory.valueProperty().addListener((obs, oldValue, newValue) -> pointsRemaining.set(pointsRemaining.get() - newValue + oldValue));
+        valueFactory.maxProperty().bind(Bindings.createIntegerBinding(
+                () -> Math.min(maxAttribute, valueFactory.getValue() + pointsRemaining.get()),
+                pointsRemaining, valueFactory.valueProperty()));
+        spinner.setValueFactory(valueFactory);
+
+    }
+
+    private void attributeBonus(PlayerCharacter playerCharacter, String attributeToIncrease, Integer valueToAdd) {
+        Integer originalValue = playerCharacter.getStats().get(attributeToIncrease);
+        playerCharacter.getStats().replace(attributeToIncrease, originalValue + valueToAdd);
+    }
+
+    //Scene Changer
+    public void nextButtonPushed(ActionEvent event) throws IOException, ClassNotFoundException {
+
+        //Save character race
+
+
+        CharacterManager characterManager = new CharacterManager();
+        ArrayList<PlayerCharacter> playerCharacterList = characterManager.load("save.txt");
+        PlayerCharacter playerCharacter = playerCharacterList.get(playerCharacterList.size()-1);
+
+        // Add modified attributes
+        int i = 0;
+        for(Map.Entry<String, Integer> attribute : playerCharacter.getStats().entrySet()) {
+            System.out.println(attributeSpinners.get(i).getValue().toString());
+            attribute.setValue((Integer) attributeSpinners.get(i).getValue());
+            i++;
+        }
+
+
+        characterManager.saveCharacterList(playerCharacter);
+
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Scene tableViewScene = new Scene(tableViewParent);
+
+        //Get stage information
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(tableViewScene);
+        window.show();
+    }
 
 }
