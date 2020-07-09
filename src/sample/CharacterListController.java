@@ -26,6 +26,7 @@ public class CharacterListController implements Initializable {
     @FXML private TableColumn<PlayerCharacter, String> raceColumn;
     @FXML private TableColumn<PlayerCharacter, String> professionColumn;
     @FXML private TableColumn<PlayerCharacter, Map<String, Integer>> strengthColumn;
+    @FXML private TableColumn<PlayerCharacter, Map<String, Integer>> skillColumn;
 
 
     @Override
@@ -35,6 +36,7 @@ public class CharacterListController implements Initializable {
         raceColumn.setCellValueFactory(new PropertyValueFactory<PlayerCharacter, String>("Race"));
         professionColumn.setCellValueFactory(new PropertyValueFactory<PlayerCharacter, String>("Profession"));
         strengthColumn.setCellValueFactory(new PropertyValueFactory<>("Stats"));
+        skillColumn.setCellValueFactory(new PropertyValueFactory<>("Skills"));
 
         //Data loading
 

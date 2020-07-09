@@ -5,15 +5,16 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CharacterListController">
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CharacterListController">
    <children>
-      <TableView fx:id="tableView" layoutX="76.0" layoutY="100.0" prefHeight="200.0" prefWidth="493.0">
+      <TableView fx:id="tableView" layoutX="243.0" layoutY="188.0" prefHeight="425.0" prefWidth="742.0">
         <columns>
           <TableColumn fx:id="raceColumn" prefWidth="75.0" text="Race" />
           <TableColumn fx:id="professionColumn" prefWidth="75.0" text="Class" />
-            <TableColumn fx:id="strengthColumn" prefWidth="341.0" text="Strength" />
+            <TableColumn fx:id="strengthColumn" prefWidth="341.0" text="Stat" />
+            <TableColumn fx:id="skillColumn" prefWidth="247.0" text="Skill" />
         </columns>
       </TableView>
-      <Button layoutX="545.0" layoutY="361.0" mnemonicParsing="false" text="Back" />
+      <Button layoutX="1079.0" layoutY="730.0" mnemonicParsing="false" text="Back" />
    </children>
 </AnchorPane>

@@ -69,10 +69,11 @@ public class CharacterCreationThreeController implements Initializable {
 
         // Assign racial bonuses
         String playerRace = playerCharacter.getRace();
-        if (playerRace.equals("Człowiek")) attributeBonus(playerCharacter, "Charisma", 1);
-        if (playerRace.equals("Mutant")) attributeBonus(playerCharacter, "Strength", 1);
-        if (playerRace.equals("Przybysz")) attributeBonus(playerCharacter, "Endurance", 1);
-        if (playerRace.equals("Android")) attributeBonus(playerCharacter, "Intelligence", 1);
+        int classBonus = 1;
+        if (playerRace.equals("Człowiek")) attributeBonus(playerCharacter, "Charisma", classBonus);
+        if (playerRace.equals("Mutant")) attributeBonus(playerCharacter, "Strength", classBonus);
+        if (playerRace.equals("Przybysz")) attributeBonus(playerCharacter, "Endurance", classBonus);
+        if (playerRace.equals("Android")) attributeBonus(playerCharacter, "Intelligence", classBonus);
 
         // Points Left
         numberOfPointsLeftLabel.textProperty().bind(Bindings.format("%d", pointsRemaining));
@@ -107,8 +108,6 @@ public class CharacterCreationThreeController implements Initializable {
     public void nextButtonPushed(ActionEvent event) throws IOException, ClassNotFoundException {
 
         //Save character race
-
-
         CharacterManager characterManager = new CharacterManager();
         ArrayList<PlayerCharacter> playerCharacterList = characterManager.load("save.txt");
         PlayerCharacter playerCharacter = playerCharacterList.get(playerCharacterList.size()-1);
@@ -124,7 +123,7 @@ public class CharacterCreationThreeController implements Initializable {
 
         characterManager.saveCharacterList(playerCharacter);
 
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationFour.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
 
         //Get stage information
