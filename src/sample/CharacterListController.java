@@ -65,8 +65,31 @@ public class CharacterListController implements Initializable {
 
     public ObservableList<PlayerCharacter> getCharacters() throws IOException, ClassNotFoundException {
         ObservableList characters = FXCollections.observableArrayList();
-        characters.add(new CharacterManager().load("save.txt").get(0));
+        characters.addAll(new CharacterManager().load("save.txt"));
+
+        /*
+        for(Map.Entry<String, Integer> skill : playerCharacter.getSkills().entrySet()) {
+            System.out.println(skillSpinners.get(i).getValue().toString());
+            skill.setValue((Integer) skillSpinners.get(i).getValue());
+            i++;
+        }
+
+         */
+
+
+
         return characters;
+    }
+
+    public void nextButtonPushed(ActionEvent event) throws IOException {
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Scene tableViewScene = new Scene(tableViewParent);
+
+        //Get stage information
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(tableViewScene);
+        window.show();
     }
 
 

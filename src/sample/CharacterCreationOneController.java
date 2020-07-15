@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class CharacterCreationOneController implements Initializable {
@@ -32,7 +33,7 @@ public class CharacterCreationOneController implements Initializable {
     }
 
     //Scene Changer
-    public void nextButtonPushed(ActionEvent event) throws IOException {
+    public void nextButtonPushed(ActionEvent event) throws IOException, ClassNotFoundException {
 
         //Save character race
 
@@ -41,7 +42,11 @@ public class CharacterCreationOneController implements Initializable {
 
         playerCharacter.setRace(chosenRace);
         CharacterManager characterManager = new CharacterManager();
-        characterManager.saveCharacterList(playerCharacter);
+        ArrayList<PlayerCharacter> tempCharacterList = new ArrayList<>();
+        tempCharacterList = characterManager.load("save.txt");
+        tempCharacterList.add(playerCharacter);
+        characterManager.save(tempCharacterList, "save.txt");
+        //characterManager.saveCharacterList(playerCharacter);
 
 
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationTwo.fxml"));

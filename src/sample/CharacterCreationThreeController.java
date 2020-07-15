@@ -10,6 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
 
@@ -23,6 +25,8 @@ import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory;
 import javafx.stage.Stage;
 
 public class CharacterCreationThreeController implements Initializable {
+
+    @FXML private Button nextButton;
 
     //Spinners
     @FXML private Spinner strengthSpinner;
@@ -46,6 +50,8 @@ public class CharacterCreationThreeController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
 
         // Set up Spinner List
         attributeSpinners.add(strengthSpinner);
@@ -97,6 +103,7 @@ public class CharacterCreationThreeController implements Initializable {
                 pointsRemaining, valueFactory.valueProperty()));
         spinner.setValueFactory(valueFactory);
 
+
     }
 
     private void attributeBonus(PlayerCharacter playerCharacter, String attributeToIncrease, Integer valueToAdd) {
@@ -106,6 +113,18 @@ public class CharacterCreationThreeController implements Initializable {
 
     //Scene Changer
     public void nextButtonPushed(ActionEvent event) throws IOException, ClassNotFoundException {
+
+        //Alert when skill points left
+        System.out.println(pointsRemaining.getValue());
+
+        if (pointsRemaining.getValue() > 0) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Alert");
+            alert.setContentText("You still have points to spend");
+            alert.setHeaderText(null);
+            alert.showAndWait();
+            return;
+        }
 
         //Save character race
         CharacterManager characterManager = new CharacterManager();
@@ -120,8 +139,9 @@ public class CharacterCreationThreeController implements Initializable {
             i++;
         }
 
-
-        characterManager.saveCharacterList(playerCharacter);
+        playerCharacterList.set(playerCharacterList.size()-1, playerCharacter);
+        characterManager.save(playerCharacterList, "save.txt");
+        //characterManager.saveCharacterList(playerCharacter);
 
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationFour.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
@@ -132,5 +152,7 @@ public class CharacterCreationThreeController implements Initializable {
         window.setScene(tableViewScene);
         window.show();
     }
+
+
 
 }

@@ -91,7 +91,7 @@
             </GridPane>
          </children>
       </VBox>
-      <Button layoutX="1063.0" layoutY="709.0" mnemonicParsing="false" onAction="#nextButtonPushed" text="Next">
+      <Button fx:id="nextButton" layoutX="1063.0" layoutY="709.0" mnemonicParsing="false" onAction="#nextButtonPushed" text="Next">
          <font>
             <Font size="36.0" />
          </font>
