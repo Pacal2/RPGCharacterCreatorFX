@@ -1,14 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="sample.CharacterCreationFiveController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CharacterCreationFiveController">
+    <children>
+        <VBox prefHeight="800.0" prefWidth="1200.0" spacing="50.0">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="78.0" prefWidth="1200.0" text="Wybierz dodatkowy ekwipunek:" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="48.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets top="30.0" />
+                    </VBox.margin>
+                </Label>
+                <HBox prefHeight="541.0" prefWidth="1200.0">
+                    <children>
+                        <ImageView fx:id="itemImage" fitHeight="400.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" />
+                        <VBox prefHeight="494.0" prefWidth="915.0">
+                            <children>
+                                <ComboBox fx:id="itemComboBox" onAction="#setItemChoiceBoxPicked" prefHeight="61.0" prefWidth="267.0" />
+                                <TextArea fx:id="itemDescription" prefHeight="200.0" prefWidth="200.0">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets right="50.0" top="50.0" />
+                                    </VBox.margin>
+                                </TextArea>
+                            </children>
+                            <HBox.margin>
+                                <Insets left="50.0" />
+                            </HBox.margin>
+                        </VBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets left="50.0" />
+                    </VBox.margin>
+                </HBox>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <Button fx:id="nextButton" contentDisplay="RIGHT" layoutX="1019.0" layoutY="22.0" mnemonicParsing="false" onAction="#nextButtonPushed" prefHeight="86.0" prefWidth="167.0" text="Next">
+                            <font>
+                                <Font size="36.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+    </children>
 </AnchorPane>

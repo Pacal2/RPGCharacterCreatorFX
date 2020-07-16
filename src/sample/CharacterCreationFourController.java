@@ -125,8 +125,6 @@ public class CharacterCreationFourController implements Initializable {
     public void nextButtonPushed(ActionEvent event) throws IOException, ClassNotFoundException {
 
         //Alert when skill points left
-        System.out.println(pointsRemaining.getValue());
-
         if (pointsRemaining.getValue() > 0) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Alert");

@@ -11,11 +11,14 @@ import java.util.Map;
 public class PlayerCharacter implements Serializable {
 
     //Vital traits
+    private String name;
     private String race;
     private String profession;
     //Statistics
     private Map<String, Integer> stats = new LinkedHashMap<>();
     private Map<String, Integer> skills = new LinkedHashMap<>();
+    //Equipment
+    private ArrayList<Item> equipment = new ArrayList<>();
 
 
     public PlayerCharacter() {
@@ -49,7 +52,8 @@ public class PlayerCharacter implements Serializable {
 
     }
 
-    public PlayerCharacter(String race, String profession, int strength, int dexterity, int endurance, int intelligence, int charisma, int perception) {
+    public PlayerCharacter(String name, String race, String profession, int strength, int dexterity, int endurance, int intelligence, int charisma, int perception) {
+        this.name = name;
         this.race = race;
         this.profession = profession;
         // basic attributes
@@ -117,4 +121,22 @@ public class PlayerCharacter implements Serializable {
     public void setSkills(Map<String, Integer> skills) {
         this.skills = skills;
     }
+
+    public void findItemAndAdd(String itemName, int amount) {
+        boolean found = false;
+
+        for(Item equipmentToList : equipment) {
+            if (equipmentToList.getName().equals(itemName)) {
+                equipmentToList.addAmount(amount);
+                found = true;
+            }
+        }
+
+        if (!found) {
+            this.equipment.add(new Item(itemName, amount));
+        }
+
+
+    }
+
 }
