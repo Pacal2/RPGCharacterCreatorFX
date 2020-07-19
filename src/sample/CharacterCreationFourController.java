@@ -151,7 +151,7 @@ public class CharacterCreationFourController implements Initializable {
         characterManager.save(playerCharacterList, "save.txt");
         //characterManager.saveCharacterList(playerCharacter);
 
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationFive.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
 
         //Get stage information

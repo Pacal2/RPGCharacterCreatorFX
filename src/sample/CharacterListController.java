@@ -27,6 +27,7 @@ public class CharacterListController implements Initializable {
     @FXML private TableColumn<PlayerCharacter, String> professionColumn;
     @FXML private TableColumn<PlayerCharacter, Map<String, Integer>> strengthColumn;
     @FXML private TableColumn<PlayerCharacter, Map<String, Integer>> skillColumn;
+    @FXML private TableColumn<PlayerCharacter, Map<String, Integer>> equipmentColumn;
 
 
     @Override
@@ -37,6 +38,7 @@ public class CharacterListController implements Initializable {
         professionColumn.setCellValueFactory(new PropertyValueFactory<PlayerCharacter, String>("Profession"));
         strengthColumn.setCellValueFactory(new PropertyValueFactory<>("Stats"));
         skillColumn.setCellValueFactory(new PropertyValueFactory<>("Skills"));
+        equipmentColumn.setCellValueFactory(new PropertyValueFactory<>("Equipment"));
 
         //Data loading
 
@@ -47,7 +49,6 @@ public class CharacterListController implements Initializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
 
     }
 
@@ -62,7 +63,6 @@ public class CharacterListController implements Initializable {
         window.show();
     }
 
-
     public ObservableList<PlayerCharacter> getCharacters() throws IOException, ClassNotFoundException {
         ObservableList characters = FXCollections.observableArrayList();
         characters.addAll(new CharacterManager().load("save.txt"));
@@ -75,8 +75,6 @@ public class CharacterListController implements Initializable {
         }
 
          */
-
-
 
         return characters;
     }

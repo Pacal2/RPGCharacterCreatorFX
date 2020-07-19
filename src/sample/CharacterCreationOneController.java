@@ -12,6 +12,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -43,9 +44,17 @@ public class CharacterCreationOneController implements Initializable {
         playerCharacter.setRace(chosenRace);
         CharacterManager characterManager = new CharacterManager();
         ArrayList<PlayerCharacter> tempCharacterList = new ArrayList<>();
-        tempCharacterList = characterManager.load("save.txt");
+
+        File tmpDir = new File("save.txt");
+        boolean exists = tmpDir.exists();
+        if (exists) {
+            tempCharacterList = characterManager.load("save.txt");
+
+        }
         tempCharacterList.add(playerCharacter);
         characterManager.save(tempCharacterList, "save.txt");
+
+
         //characterManager.saveCharacterList(playerCharacter);
 
 

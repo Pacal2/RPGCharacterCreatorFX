@@ -11,8 +11,9 @@
         <columns>
           <TableColumn fx:id="raceColumn" prefWidth="75.0" text="Race" />
           <TableColumn fx:id="professionColumn" prefWidth="75.0" text="Class" />
-            <TableColumn fx:id="strengthColumn" prefWidth="341.0" text="Stat" />
-            <TableColumn fx:id="skillColumn" prefWidth="247.0" text="Skill" />
+            <TableColumn fx:id="strengthColumn" prefWidth="177.0" text="Stat" />
+            <TableColumn fx:id="skillColumn" prefWidth="221.0" text="Skill" />
+            <TableColumn fx:id="equipmentColumn" prefWidth="192.0" text="Equipment" />
         </columns>
       </TableView>
       <Button layoutX="1079.0" layoutY="730.0" mnemonicParsing="false" onAction="#backButtonPushed" text="Back" />

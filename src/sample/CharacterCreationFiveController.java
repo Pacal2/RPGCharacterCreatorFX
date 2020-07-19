@@ -33,7 +33,24 @@ public class CharacterCreationFiveController implements Initializable {
         itemComboBox.getItems().addAll("Prowiant", "Woda", "Namiot i śpiwór", "Zapalniczka", "Siekiera", "Lina");
         this.itemDescription.setText("Wybierz jeden z powyższych przedmiotów");
         this.nextButton.setDisable(true);
+
+        // Set up player Character
+        CharacterManager characterManager = new CharacterManager();
+        ArrayList<PlayerCharacter> playerCharacterList = null;
+        try {
+            playerCharacterList = characterManager.load("save.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        PlayerCharacter playerCharacter = playerCharacterList.get(playerCharacterList.size()-1);
+
+
+
     }
+
+
 
     //Scene Changer
     public void nextButtonPushed(ActionEvent event) throws IOException, ClassNotFoundException {
@@ -43,13 +60,59 @@ public class CharacterCreationFiveController implements Initializable {
         ArrayList<PlayerCharacter> playerCharacterList = characterManager.load("save.txt");
         PlayerCharacter playerCharacter = playerCharacterList.get(playerCharacterList.size()-1);
 
-        playerCharacter.setProfession(itemComboBox.getValue().toString());
+        // Add class equipment
+        String playerClass = playerCharacter.getProfession();
+        if (playerCharacter.equals("Pięść")) {
+            playerCharacter.findItemAndAdd("Włócznia", 1);
+            playerCharacter.findItemAndAdd("Ciężka zbroja", 1);
+        }
+        if (playerCharacter.equals("Oczko")) {
+            playerCharacter.findItemAndAdd("Strzelba", 1);
+            playerCharacter.findItemAndAdd("Lekka zbroja", 1);
+        }
+        if (playerCharacter.equals("Mózg")) {
+            playerCharacter.findItemAndAdd("Lekarstwa", 3);
+            playerCharacter.findItemAndAdd("Przed-wojenna książka", 1);
+        }
+        if (playerCharacter.equals("Rączka")) {
+            playerCharacter.findItemAndAdd("Sprzęt do napraw", 3);
+            playerCharacter.findItemAndAdd("Zepsuty przed-wojenny sprzęt", 1);
+        }
+        if (playerCharacter.equals("Cień")) {
+            playerCharacter.findItemAndAdd("Wytrychy", 3);
+            playerCharacter.findItemAndAdd("Sztylet", 1);
+        }
+        if (playerCharacter.equals("Buźka")) {
+            playerCharacter.findItemAndAdd("Rewolwer", 1);
+            playerCharacter.findItemAndAdd("Monety", 20);
+        }
+
+        // Add chosen equipment
+        String chosenItem = itemComboBox.getValue().toString();
+        if (chosenItem == "Prowiant") {
+            playerCharacter.findItemAndAdd("Prowiant (dzienna porcja)", 7);
+        }
+        if (chosenItem == "Woda") {
+            playerCharacter.findItemAndAdd("Zapas wody (dzienna porcja)", 7);
+        }
+        if (chosenItem == "Namiot i śpiwór") {
+            playerCharacter.findItemAndAdd("Namiot i śpiwór", 1);
+        }
+        if (chosenItem == "Zapalniczka") {
+            playerCharacter.findItemAndAdd("Zapalniczka", 1);
+            playerCharacter.findItemAndAdd("Benzyna do zapalniczki (jedno napełnienie)", 7);
+        }
+        if (chosenItem == "Siekiera") {
+            playerCharacter.findItemAndAdd("Siekiera", 1);
+        }
+        if (chosenItem == "Lina") {
+            playerCharacter.findItemAndAdd("Lina", 7);
+        }
+
         playerCharacterList.set(playerCharacterList.size()-1, playerCharacter);
         characterManager.save(playerCharacterList, "save.txt");
-        //characterManager.saveCharacterList(playerCharacter);
 
-
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationThree.fxml"));
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("sample.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
 
         //Get stage information
@@ -64,37 +127,37 @@ public class CharacterCreationFiveController implements Initializable {
         this.nextButton.setDisable(false);
         if (itemChoice == "Prowiant") {
             this.itemDescription.setText(
-                    "Wojownicy, bandyci, dzikusy. Wszyscy polecający na sile swoich mięśni \n\nZdolności: \n+ do sprawności i walki wręcz \n\nEkwipunek: \nwłócznia i ciężka zbroja"
+                    "Choć świat zdąrzył częściowo powstać z chaosu po katakliźmie to dalej jedzenie nie jest tak łatwe do zdobycia \n\nProwiant(dzienna porcja) x 7"
             );
-            itemImage.setImage(new Image("Warrior.jpg"));
+            itemImage.setImage(new Image("Rations.jpg"));
         } else if (itemChoice == "Woda") {
             this.itemDescription.setText(
-                    "Tropiciele, strzelcy i gangsterzy. Wprawieni w broni dystansowej i znajdowaniu poszlak. \n\nZdolności: \n+ do broni dystansowej i przetrwania \n\nEkwipunek: \nstrzelba i lekka zbroja"
+                    "Podstawa życia dla wszystkich istot inteligentnych poza androidami. \n\nZapas wody: x 7"
             );
-            itemImage.setImage(new Image("Hunter.jpg"));
+            itemImage.setImage(new Image("Water.jpg"));
         } else if (itemChoice == "Namiot i śpiwór") {
             this.itemDescription.setText(
-                    "Naukowcy i lekarze. Polegający na sile swojego umysłu. \n\nZdolności: \n+ do medycyny i nauki \n\nEkwipunek: \nlekarstwa i książka z przed-wojenną wiedzą"
+                    "Lepsze warunki do spania pozwalają szybciej regenerować zdrowie i kondycję \n\nNamiot i śpiwór x 1"
             );
-            itemImage.setImage(new Image("Doctor.jpg"));
+            itemImage.setImage(new Image("Tent.jpg"));
         } else if (itemChoice == "Zapalniczka") {
             this.itemDescription.setText(
-                    "Inżynierzy i mechanicy. Operujący praktycznymi umiejętnościami. \n\nZdolności: \n+ do naprawy i pojazdów \n\nEkwipunek: \nsprzęt do napraw i motor"
+                    "Bardzo cenny przedmiot w post-apokaliptycznej rzeczywistości. \n\nZapalniczka x 1 \nBenzyna do zapalniczki (jedno napełnienie) x 7"
             );
-            itemImage.setImage(new Image("Mechanic.jpg"));
+            itemImage.setImage(new Image("Lighter.jpg"));
         } else if (itemChoice == "Siekiera") {
             this.itemDescription.setText(
-                    "Złodzieje i szpiedzy. Wolący pozostać w cieniu.   \n\nZdolności: \n+ do skradania i włamywania się \n\nEkwipunek: \nwytrychy i sztylet"
+                    "Może być użyta zarówno jako narzędzie i jako broń. \n\nSiekiera x 1"
             );
-            itemImage.setImage(new Image("Thief.jpg"));
+            itemImage.setImage(new Image("Axe.jpg"));
         } else if (itemChoice == "Lina") {
             this.itemDescription.setText(
-                    "Kupcy i dyplomaci. Ludzie polegający na retoryce.  \n\nZdolności: \n+ do mowy i handlu \n\nEkwipunek: \n30 monet i pistolet"
+                    "Kupcy i dyplomaci. Ludzie polegający na retoryce.  \n\nLina (1 m) x 7"
             );
-            itemImage.setImage(new Image("Merchant.jpg"));
+            itemImage.setImage(new Image("Rope.jpg"));
         }else {
             this.itemDescription.setText(
-                    "Wybierz klasę powyżej"
+                    "Wybierz dodatkowy przedmiot, który będzie częścią twojego ekwipunku"
             );
         }
     }
