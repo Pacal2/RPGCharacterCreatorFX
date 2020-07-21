@@ -43,10 +43,9 @@ public class CharacterCreationTwoController implements Initializable {
         PlayerCharacter playerCharacter = playerCharacterList.get(playerCharacterList.size()-1);
 
         playerCharacter.setProfession(classComboBox.getValue().toString());
+
         playerCharacterList.set(playerCharacterList.size()-1, playerCharacter);
         characterManager.save(playerCharacterList, "save.txt");
-        //characterManager.saveCharacterList(playerCharacter);
-
 
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationThree.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);

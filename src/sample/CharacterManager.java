@@ -22,11 +22,6 @@ public class CharacterManager implements Serializable {
         oos.close();
     }
 
-    public void saveCharacterList(PlayerCharacter playerCharacter) throws IOException {
-        this.characters.add(playerCharacter);
-        save(characters, "save.txt");
-    }
-
     public ArrayList<PlayerCharacter> load(String fileName) throws IOException, ClassNotFoundException {
         FileInputStream fis = new FileInputStream(fileName);
         ObjectInputStream ois = new ObjectInputStream(fis);

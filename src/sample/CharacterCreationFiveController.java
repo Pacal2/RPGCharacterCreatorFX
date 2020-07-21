@@ -34,20 +34,6 @@ public class CharacterCreationFiveController implements Initializable {
         this.itemDescription.setText("Wybierz jeden z powyższych przedmiotów");
         this.nextButton.setDisable(true);
 
-        // Set up player Character
-        CharacterManager characterManager = new CharacterManager();
-        ArrayList<PlayerCharacter> playerCharacterList = null;
-        try {
-            playerCharacterList = characterManager.load("save.txt");
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        PlayerCharacter playerCharacter = playerCharacterList.get(playerCharacterList.size()-1);
-
-
-
     }
 
 
@@ -60,37 +46,45 @@ public class CharacterCreationFiveController implements Initializable {
         ArrayList<PlayerCharacter> playerCharacterList = characterManager.load("save.txt");
         PlayerCharacter playerCharacter = playerCharacterList.get(playerCharacterList.size()-1);
 
+
         // Add class equipment
+        System.out.println("Your equipment: " + playerCharacter.getEquipment());
         String playerClass = playerCharacter.getProfession();
-        if (playerCharacter.equals("Pięść")) {
+        if (playerClass.equals("Pięść")) {
             playerCharacter.findItemAndAdd("Włócznia", 1);
             playerCharacter.findItemAndAdd("Ciężka zbroja", 1);
         }
-        if (playerCharacter.equals("Oczko")) {
+        if (playerClass.equals("Oczko")) {
             playerCharacter.findItemAndAdd("Strzelba", 1);
             playerCharacter.findItemAndAdd("Lekka zbroja", 1);
         }
-        if (playerCharacter.equals("Mózg")) {
+        if (playerClass.equals("Mózg")) {
             playerCharacter.findItemAndAdd("Lekarstwa", 3);
             playerCharacter.findItemAndAdd("Przed-wojenna książka", 1);
         }
-        if (playerCharacter.equals("Rączka")) {
+        if (playerClass.equals("Rączka")) {
             playerCharacter.findItemAndAdd("Sprzęt do napraw", 3);
             playerCharacter.findItemAndAdd("Zepsuty przed-wojenny sprzęt", 1);
         }
-        if (playerCharacter.equals("Cień")) {
+        if (playerClass.equals("Cień")) {
             playerCharacter.findItemAndAdd("Wytrychy", 3);
             playerCharacter.findItemAndAdd("Sztylet", 1);
         }
-        if (playerCharacter.equals("Buźka")) {
+        if (playerClass.equals("Buźka")) {
             playerCharacter.findItemAndAdd("Rewolwer", 1);
             playerCharacter.findItemAndAdd("Monety", 20);
         }
 
+
         // Add chosen equipment
+
         String chosenItem = itemComboBox.getValue().toString();
+        System.out.println("BOOM1");
+        System.out.println("Your equipment: " + playerCharacter.getEquipment());
+
         if (chosenItem == "Prowiant") {
             playerCharacter.findItemAndAdd("Prowiant (dzienna porcja)", 7);
+
         }
         if (chosenItem == "Woda") {
             playerCharacter.findItemAndAdd("Zapas wody (dzienna porcja)", 7);
@@ -108,9 +102,14 @@ public class CharacterCreationFiveController implements Initializable {
         if (chosenItem == "Lina") {
             playerCharacter.findItemAndAdd("Lina", 7);
         }
+        System.out.println("BOOM2");
+        System.out.println("Your equipment: " + playerCharacter.getEquipment());
 
         playerCharacterList.set(playerCharacterList.size()-1, playerCharacter);
+        System.out.println("BOOM3");
+
         characterManager.save(playerCharacterList, "save.txt");
+        System.out.println("BOOM4");
 
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("sample.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);

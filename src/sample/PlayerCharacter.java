@@ -18,7 +18,9 @@ public class PlayerCharacter implements Serializable {
     private Map<String, Integer> stats = new LinkedHashMap<>();
     private Map<String, Integer> skills = new LinkedHashMap<>();
     //Equipment
-    private ArrayList<Item> equipment = new ArrayList<>();
+    private ArrayList<Item> equipment;
+
+
 
 
     public PlayerCharacter() {
@@ -48,7 +50,8 @@ public class PlayerCharacter implements Serializable {
         // rhetoric skills
         this.skills.put("Barter", baseSkillAmount);
         this.skills.put("Speech", baseSkillAmount);
-
+        //equipment
+        this.equipment = new ArrayList<>();
 
     }
 
@@ -123,6 +126,7 @@ public class PlayerCharacter implements Serializable {
     }
 
     public void findItemAndAdd(String itemName, int amount) {
+
         boolean found = false;
 
         for(Item equipmentToList : equipment) {
@@ -137,6 +141,15 @@ public class PlayerCharacter implements Serializable {
         }
 
 
+
+
     }
 
+    public ArrayList<Item> getEquipment() {
+        return equipment;
+    }
+
+    public void setEquipment(ArrayList<Item> equipment) {
+        this.equipment = equipment;
+    }
 }
