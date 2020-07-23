@@ -18,7 +18,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class CharacterCreationOneController implements Initializable {
+public class CharacterCreationRaceController implements Initializable {
 
     @FXML private ComboBox raceComboBox;
     @FXML private ImageView raceImage;
@@ -42,6 +42,19 @@ public class CharacterCreationOneController implements Initializable {
         String chosenRace = raceComboBox.getValue().toString();
 
         playerCharacter.setRace(chosenRace);
+
+        // Decide whether to switch to gender menu next or skip it based on race
+        String nextStep;
+        if (chosenRace == "Człowiek" || chosenRace == "Mutant") {
+            nextStep = "CharacterCreationGender.fxml";
+        } else {
+
+            playerCharacter.setGender("-");
+            nextStep = "CharacterCreationClass.fxml";
+        }
+
+
+
         CharacterManager characterManager = new CharacterManager();
         ArrayList<PlayerCharacter> tempCharacterList = new ArrayList<>();
 
@@ -55,10 +68,10 @@ public class CharacterCreationOneController implements Initializable {
         characterManager.save(tempCharacterList, "save.txt");
 
 
-        //characterManager.saveCharacterList(playerCharacter);
 
 
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationTwo.fxml"));
+
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource(nextStep));
         Scene tableViewScene = new Scene(tableViewParent);
 
         //Get stage information

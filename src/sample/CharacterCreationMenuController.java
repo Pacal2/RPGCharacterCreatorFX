@@ -12,12 +12,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class CharacterCreationMenuController implements Initializable {
 
 
     //Scene Changer
     public void createNewCharacterButtonPushed(ActionEvent event) throws IOException {
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationOne.fxml"));
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationRace.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
 
         //Get stage information

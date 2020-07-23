@@ -19,7 +19,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class CharacterCreationFiveController implements Initializable {
+public class CharacterCreationEquipmentController implements Initializable {
 
     @FXML
     private ComboBox itemComboBox;
@@ -111,7 +111,7 @@ public class CharacterCreationFiveController implements Initializable {
         characterManager.save(playerCharacterList, "save.txt");
         System.out.println("BOOM4");
 
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationMenu.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
 
         //Get stage information

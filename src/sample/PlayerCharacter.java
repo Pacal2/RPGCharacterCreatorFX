@@ -13,6 +13,7 @@ public class PlayerCharacter implements Serializable {
     //Vital traits
     private String name;
     private String race;
+    private String gender;
     private String profession;
     //Statistics
     private Map<String, Integer> stats = new LinkedHashMap<>();
@@ -151,5 +152,21 @@ public class PlayerCharacter implements Serializable {
 
     public void setEquipment(ArrayList<Item> equipment) {
         this.equipment = equipment;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }

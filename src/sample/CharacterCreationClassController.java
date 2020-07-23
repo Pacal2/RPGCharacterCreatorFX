@@ -19,7 +19,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class CharacterCreationTwoController implements Initializable {
+public class CharacterCreationClassController implements Initializable {
 
     @FXML private ComboBox classComboBox;
     @FXML private ImageView classImage;
@@ -47,7 +47,7 @@ public class CharacterCreationTwoController implements Initializable {
         playerCharacterList.set(playerCharacterList.size()-1, playerCharacter);
         characterManager.save(playerCharacterList, "save.txt");
 
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationThree.fxml"));
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationStats.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
 
         //Get stage information

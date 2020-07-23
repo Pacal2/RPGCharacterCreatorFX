@@ -24,7 +24,7 @@ import java.util.ResourceBundle;
 import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory;
 import javafx.stage.Stage;
 
-public class CharacterCreationThreeController implements Initializable {
+public class CharacterCreationStatsController implements Initializable {
 
     @FXML private Button nextButton;
 
@@ -143,7 +143,7 @@ public class CharacterCreationThreeController implements Initializable {
         characterManager.save(playerCharacterList, "save.txt");
         //characterManager.saveCharacterList(playerCharacter);
 
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationFour.fxml"));
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationSkills.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
 
         //Get stage information

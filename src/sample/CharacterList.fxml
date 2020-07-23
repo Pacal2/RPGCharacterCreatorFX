@@ -10,10 +10,11 @@
       <TableView fx:id="tableView" layoutX="243.0" layoutY="188.0" prefHeight="425.0" prefWidth="742.0">
         <columns>
           <TableColumn fx:id="raceColumn" prefWidth="75.0" text="Race" />
+            <TableColumn fx:id="genderColumn" prefWidth="75.0" text="Gender" />
           <TableColumn fx:id="professionColumn" prefWidth="75.0" text="Class" />
-            <TableColumn fx:id="strengthColumn" prefWidth="177.0" text="Stat" />
-            <TableColumn fx:id="skillColumn" prefWidth="221.0" text="Skill" />
-            <TableColumn fx:id="equipmentColumn" prefWidth="192.0" text="Equipment" />
+            <TableColumn fx:id="strengthColumn" prefWidth="132.0" text="Stat" />
+            <TableColumn fx:id="skillColumn" prefWidth="164.0" text="Skill" />
+            <TableColumn fx:id="equipmentColumn" prefWidth="220.0" text="Equipment" />
         </columns>
       </TableView>
       <Button layoutX="1079.0" layoutY="730.0" mnemonicParsing="false" onAction="#backButtonPushed" text="Back" />

@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-public class CharacterCreationFourController implements Initializable {
+public class CharacterCreationSkillsController implements Initializable {
 
 
     //Spinners
@@ -150,7 +150,7 @@ public class CharacterCreationFourController implements Initializable {
         playerCharacterList.set(playerCharacterList.size()-1, playerCharacter);
         characterManager.save(playerCharacterList, "save.txt");
 
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationFive.fxml"));
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationEquipment.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
 
         //Get stage information

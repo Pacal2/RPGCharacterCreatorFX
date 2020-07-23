@@ -16,7 +16,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Map;
 import java.util.ResourceBundle;
 
@@ -24,6 +23,7 @@ public class CharacterListController implements Initializable {
 
     @FXML private TableView<PlayerCharacter> tableView;
     @FXML private TableColumn<PlayerCharacter, String> raceColumn;
+    @FXML private TableColumn<PlayerCharacter, String> genderColumn;
     @FXML private TableColumn<PlayerCharacter, String> professionColumn;
     @FXML private TableColumn<PlayerCharacter, Map<String, Integer>> strengthColumn;
     @FXML private TableColumn<PlayerCharacter, Map<String, Integer>> skillColumn;
@@ -35,6 +35,7 @@ public class CharacterListController implements Initializable {
 
         // Column set up
         raceColumn.setCellValueFactory(new PropertyValueFactory<PlayerCharacter, String>("Race"));
+        genderColumn.setCellValueFactory(new PropertyValueFactory<PlayerCharacter, String>("Gender"));
         professionColumn.setCellValueFactory(new PropertyValueFactory<PlayerCharacter, String>("Profession"));
         strengthColumn.setCellValueFactory(new PropertyValueFactory<>("Stats"));
         skillColumn.setCellValueFactory(new PropertyValueFactory<>("Skills"));
@@ -53,7 +54,7 @@ public class CharacterListController implements Initializable {
     }
 
     public void backButtonPushed(ActionEvent event) throws IOException {
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationMenu.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
 
         //Get stage information
@@ -80,7 +81,7 @@ public class CharacterListController implements Initializable {
     }
 
     public void nextButtonPushed(ActionEvent event) throws IOException {
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationMenu.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
 
         //Get stage information
