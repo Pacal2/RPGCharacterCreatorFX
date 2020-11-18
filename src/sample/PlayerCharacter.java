@@ -10,6 +10,8 @@ import java.util.Map;
 
 public class PlayerCharacter implements Serializable {
 
+    //ID
+    private int ID;
     //Vital traits
     private String name;
     private String race;
@@ -20,9 +22,8 @@ public class PlayerCharacter implements Serializable {
     private Map<String, Integer> skills = new LinkedHashMap<>();
     //Equipment
     private ArrayList<Item> equipment;
-
-
-
+    //Finished
+    private boolean finished = false;
 
     public PlayerCharacter() {
         // basic attributes
@@ -92,6 +93,14 @@ public class PlayerCharacter implements Serializable {
     public PlayerCharacter(String race, String profession) {
         this.race = race;
         this.profession = profession;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public String getRace() {
@@ -168,5 +177,13 @@ public class PlayerCharacter implements Serializable {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public boolean isFinished() {
+        return finished;
+    }
+
+    public void setFinished(boolean finished) {
+        this.finished = finished;
     }
 }

@@ -36,8 +36,6 @@ public class CharacterCreationEquipmentController implements Initializable {
 
     }
 
-
-
     //Scene Changer
     public void nextButtonPushed(ActionEvent event) throws IOException, ClassNotFoundException {
 
@@ -79,12 +77,9 @@ public class CharacterCreationEquipmentController implements Initializable {
         // Add chosen equipment
 
         String chosenItem = itemComboBox.getValue().toString();
-        System.out.println("BOOM1");
-        System.out.println("Your equipment: " + playerCharacter.getEquipment());
 
         if (chosenItem == "Prowiant") {
             playerCharacter.findItemAndAdd("Prowiant (dzienna porcja)", 7);
-
         }
         if (chosenItem == "Woda") {
             playerCharacter.findItemAndAdd("Zapas wody (dzienna porcja)", 7);
@@ -102,14 +97,11 @@ public class CharacterCreationEquipmentController implements Initializable {
         if (chosenItem == "Lina") {
             playerCharacter.findItemAndAdd("Lina", 7);
         }
-        System.out.println("BOOM2");
         System.out.println("Your equipment: " + playerCharacter.getEquipment());
 
         playerCharacterList.set(playerCharacterList.size()-1, playerCharacter);
-        System.out.println("BOOM3");
 
         characterManager.save(playerCharacterList, "save.txt");
-        System.out.println("BOOM4");
 
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationMenu.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
@@ -159,6 +151,15 @@ public class CharacterCreationEquipmentController implements Initializable {
                     "Wybierz dodatkowy przedmiot, który będzie częścią twojego ekwipunku"
             );
         }
+    }
+
+    public void backButtonPushed(ActionEvent event) throws IOException {
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationSkills.fxml"));
+        Scene tableViewScene = new Scene(tableViewParent);
+        //Get stage information
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        window.setScene(tableViewScene);
+        window.show();
     }
 
 }

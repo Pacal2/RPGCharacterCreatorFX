@@ -16,6 +16,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class CharacterCreationRaceController implements Initializable {
@@ -64,6 +66,25 @@ public class CharacterCreationRaceController implements Initializable {
             tempCharacterList = characterManager.load("save.txt");
 
         }
+
+        //setting ID
+        ArrayList<Integer> usedIDs = new ArrayList<>();
+        for (PlayerCharacter player: tempCharacterList) {
+            usedIDs.add(player.getID());
+        }
+        Random random = new Random();
+        int newId;
+        System.out.println(Arrays.toString(usedIDs.toArray()));
+
+        do {
+            newId = random.nextInt(1000);
+        } while (usedIDs.contains(newId) == true);
+        //setting ID
+        System.out.println(newId);
+        playerCharacter.setID(newId);
+
+
+
         tempCharacterList.add(playerCharacter);
         characterManager.save(tempCharacterList, "save.txt");
 
@@ -91,7 +112,7 @@ public class CharacterCreationRaceController implements Initializable {
             raceImage.setImage(new Image("Human.jpg"));
         } else if (raceChoice == "Przybysz") {
             this.raceDescription.setText(
-                    "Istoty, które przybyły wraz z obcymi, nikt nie wie czy to jedna ze zniewolonych przez nich ras czy zostali przez nich stworzeni. \n\nAtuty: \n+ do wytrzymałości)"
+                    "Istoty, które przybyły wraz z obcymi, nikt nie wie czy to jedna ze zniewolonych przez nich ras czy zostali przez nich stworzeni. \n\nAtuty: \n+ do wytrzymałości"
             );
             raceImage.setImage(new Image("Alien.jpg"));
         } else if (raceChoice == "Mutant") {
@@ -110,5 +131,23 @@ public class CharacterCreationRaceController implements Initializable {
             );
         }
     }
+
+    public void backButtonPushed(ActionEvent event) throws IOException, ClassNotFoundException {
+//        //Clean up list to get rid of unfinished character
+        CharacterManager characterManager = new CharacterManager();
+        ArrayList<PlayerCharacter> playerCharacterList = characterManager.load("save.txt");
+//
+//        //Overrite character object with new information
+        CharacterManager.cleanUp(playerCharacterList);
+        characterManager.save(playerCharacterList, "save.txt");
+
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationMenu.fxml"));
+        Scene tableViewScene = new Scene(tableViewParent);
+        //Get stage information
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        window.setScene(tableViewScene);
+        window.show();
+    }
+
 
 }

@@ -2,6 +2,7 @@ package sample;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class CharacterManager implements Serializable {
@@ -26,6 +27,18 @@ public class CharacterManager implements Serializable {
         FileInputStream fis = new FileInputStream(fileName);
         ObjectInputStream ois = new ObjectInputStream(fis);
         return (ArrayList<PlayerCharacter>) ois.readObject();
+    }
+
+    public static void cleanUp(ArrayList<PlayerCharacter> playerCharacterList) {
+        Iterator<PlayerCharacter> itr = playerCharacterList.iterator();
+
+        while(itr.hasNext()) {
+            PlayerCharacter playerCharacter = itr.next();
+            if (playerCharacter.isFinished() == false) {
+                itr.remove();
+            }
+        }
+
     }
 
 

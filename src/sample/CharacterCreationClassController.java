@@ -37,13 +37,15 @@ public class CharacterCreationClassController implements Initializable {
     //Scene Changer
     public void nextButtonPushed(ActionEvent event) throws IOException, ClassNotFoundException {
 
-        //Save character race
+        //Load character objection to modify
         CharacterManager characterManager = new CharacterManager();
         ArrayList<PlayerCharacter> playerCharacterList = characterManager.load("save.txt");
         PlayerCharacter playerCharacter = playerCharacterList.get(playerCharacterList.size()-1);
 
+        //Add profession to character object
         playerCharacter.setProfession(classComboBox.getValue().toString());
 
+        //Overrite character object with new information
         playerCharacterList.set(playerCharacterList.size()-1, playerCharacter);
         characterManager.save(playerCharacterList, "save.txt");
 
@@ -96,5 +98,15 @@ public class CharacterCreationClassController implements Initializable {
             );
         }
     }
+
+    public void backButtonPushed(ActionEvent event) throws IOException {
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationRace.fxml"));
+        Scene tableViewScene = new Scene(tableViewParent);
+        //Get stage information
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        window.setScene(tableViewScene);
+        window.show();
+    }
+
 
 }

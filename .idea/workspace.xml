@@ -2,33 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/sample/CharacterCreationGender.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/CharacterCreationGenderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RPGCharacterCreatorFX/sample/CharacterCreationFiveController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RPGCharacterCreatorFX/sample/CharacterCreationFour.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RPGCharacterCreatorFX/sample/CharacterCreationFourController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RPGCharacterCreatorFX/sample/CharacterCreationTwoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RPGCharacterCreatorFX/sample/CharacterCreationRaceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RPGCharacterCreatorFX/sample/CharacterCreationRaceController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RPGCharacterCreatorFX/sample/CharacterList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RPGCharacterCreatorFX/sample/CharacterList.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RPGCharacterCreatorFX/sample/CharacterListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RPGCharacterCreatorFX/sample/CharacterListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RPGCharacterCreatorFX/sample/PlayerCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RPGCharacterCreatorFX/sample/PlayerCharacter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/save.txt" beforeDir="false" afterPath="$PROJECT_DIR$/save.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationFive.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationEquipment.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationFiveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationEquipmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationFour.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationSkills.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationFourController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationSkillsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationOne.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationRace.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationOneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationRaceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationThree.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationStats.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationThreeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationStatsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationTwo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationClass.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationTwoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationClassController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationClass.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationClass.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationClassController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationClassController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationEquipment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationEquipment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationEquipmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationEquipmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationGender.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationGender.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationGenderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationGenderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationRace.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationRace.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationRaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationRaceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationSkills.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationSkills.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationSkillsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationSkillsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationStats.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationStats.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/CharacterCreationStatsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationStatsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/CharacterList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterList.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/CharacterListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/CharacterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/PlayerCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/CharacterCreationMenu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +120,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -257,6 +252,14 @@
       <workItem from="1595274612863" duration="3373000" />
       <workItem from="1595344513852" duration="3056000" />
       <workItem from="1595516000807" duration="8506000" />
+      <workItem from="1595761483122" duration="2478000" />
+      <workItem from="1596033815911" duration="599000" />
+      <workItem from="1601656882963" duration="65000" />
+      <workItem from="1602436881423" duration="501000" />
+      <workItem from="1605011818626" duration="855000" />
+      <workItem from="1605087289154" duration="1055000" />
+      <workItem from="1605698043366" duration="2918000" />
+      <workItem from="1605701017513" duration="9773000" />
     </task>
     <servers />
   </component>
@@ -269,69 +272,52 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="72" y="182" key="#Project_Structure" timestamp="1593262790755">
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1605717007087">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="72" y="182" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1593262790755" />
-    <state x="285" y="233" key="#com.intellij.ide.util.MemberChooser" timestamp="1595525727961">
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1605717007087" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1605701029639">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="285" y="233" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1595525727961" />
-    <state x="714" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595519810697">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605701029639" />
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1605726058195">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="714" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595519810697" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1595275693836">
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605726058195" />
+    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1605726058195">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595275693836" />
-    <state x="782" y="419" key="Github.CreateGistDialog" timestamp="1594056425541">
+    <state width="1877" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605726058195" />
+    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1605726058195">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="782" y="419" key="Github.CreateGistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594056425541" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1595528576079">
+    <state width="1877" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605726058195" />
+    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1605726058195">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595528576079" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1595528576079">
+    <state width="1877" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605726058195" />
+    <state x="0" y="166" key="SettingsEditor" timestamp="1605698607085">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595528576079" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1595528576079">
+    <state x="0" y="166" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605698607085" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1605701016436">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595528576079" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1595528576079">
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605701016436" />
+    <state x="0" y="140" key="new project wizard" timestamp="1605012077872">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595528576079" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1595516030154">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595516030154" />
-    <state x="-7" y="0" width="974" height="1047" maximized="true" key="dock-window-1" timestamp="1595516062217">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-7" y="0" width="974" height="1047" maximized="true" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1595516062217" />
-    <state x="-7" y="0" width="974" height="1047" key="dock-window-2" timestamp="1594316309259">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-7" y="0" width="974" height="1047" key="dock-window-2/0.0.1920.1040@0.0.1920.1040" timestamp="1594316309259" />
-    <state x="0" y="0" width="958" height="1019" key="dock-window-3" timestamp="1594316827290">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="0" y="0" width="958" height="1019" key="dock-window-3/0.0.1920.1040@0.0.1920.1040" timestamp="1594316827290" />
-    <state x="85" y="0" width="579" height="1026" key="dock-window-4" timestamp="1594317225248">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="85" y="0" width="579" height="1026" key="dock-window-4/0.0.1920.1040@0.0.1920.1040" timestamp="1594317225248" />
-    <state x="-7" y="0" width="974" height="1047" maximized="true" key="dock-window-5" timestamp="1594317945124">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-7" y="0" width="974" height="1047" maximized="true" key="dock-window-5/0.0.1920.1040@0.0.1920.1040" timestamp="1594317945124" />
-    <state x="1103" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1594916522874">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1103" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1594916522874" />
+    <state x="0" y="140" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1605012077872" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/PlayerCharacter.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

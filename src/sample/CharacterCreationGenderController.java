@@ -76,4 +76,13 @@ public class CharacterCreationGenderController implements Initializable {
 
     }
 
+    public void backButtonPushed(ActionEvent event) throws IOException {
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationRace.fxml"));
+        Scene tableViewScene = new Scene(tableViewParent);
+        //Get stage information
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        window.setScene(tableViewScene);
+        window.show();
+    }
+
 }

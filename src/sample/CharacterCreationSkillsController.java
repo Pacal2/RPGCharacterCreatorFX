@@ -147,6 +147,10 @@ public class CharacterCreationSkillsController implements Initializable {
             i++;
         }
 
+        // Set boolean as finished, so that program won't delete unfinished characters
+        playerCharacter.setFinished(true);
+        // finished
+
         playerCharacterList.set(playerCharacterList.size()-1, playerCharacter);
         characterManager.save(playerCharacterList, "save.txt");
 
@@ -175,5 +179,14 @@ public class CharacterCreationSkillsController implements Initializable {
                 pointsRemaining, valueFactory.valueProperty()));
         spinner.setValueFactory(valueFactory);
 
+    }
+
+    public void backButtonPushed(ActionEvent event) throws IOException {
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationStats.fxml"));
+        Scene tableViewScene = new Scene(tableViewParent);
+        //Get stage information
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        window.setScene(tableViewScene);
+        window.show();
     }
 }

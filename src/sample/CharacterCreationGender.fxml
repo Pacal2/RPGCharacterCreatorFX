@@ -37,6 +37,11 @@
                 <Font size="36.0" />
             </font>
         </Button>
+      <Button fx:id="backButton" layoutX="927.0" layoutY="709.0" mnemonicParsing="false" onAction="#backButtonPushed" text="Back">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
     </children>
 
 </AnchorPane>
