@@ -11,10 +11,11 @@
         <columns>
             <TableColumn fx:id="IDColumn" prefWidth="75.0" text="ID" />
             <TableColumn fx:id="finishedColumn" prefWidth="75.0" text="Finished" />
+            <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
           <TableColumn fx:id="raceColumn" prefWidth="75.0" text="Race" />
             <TableColumn fx:id="genderColumn" prefWidth="75.0" text="Gender" />
           <TableColumn fx:id="professionColumn" prefWidth="75.0" text="Class" />
-            <TableColumn fx:id="strengthColumn" prefWidth="132.0" text="Stat" />
+            <TableColumn fx:id="statsColumn" prefWidth="132.0" text="Stat" />
             <TableColumn fx:id="skillColumn" prefWidth="164.0" text="Skill" />
             <TableColumn fx:id="equipmentColumn" prefWidth="220.0" text="Equipment" />
         </columns>

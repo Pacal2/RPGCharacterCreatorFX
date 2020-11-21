@@ -147,9 +147,7 @@ public class CharacterCreationSkillsController implements Initializable {
             i++;
         }
 
-        // Set boolean as finished, so that program won't delete unfinished characters
-        playerCharacter.setFinished(true);
-        // finished
+
 
         playerCharacterList.set(playerCharacterList.size()-1, playerCharacter);
         characterManager.save(playerCharacterList, "save.txt");

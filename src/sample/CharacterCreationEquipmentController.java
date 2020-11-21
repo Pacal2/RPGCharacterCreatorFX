@@ -103,7 +103,7 @@ public class CharacterCreationEquipmentController implements Initializable {
 
         characterManager.save(playerCharacterList, "save.txt");
 
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationMenu.fxml"));
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("CharacterCreationName.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
 
         //Get stage information

@@ -26,10 +26,11 @@ public class CharacterListController implements Initializable {
     @FXML private TableView<PlayerCharacter> tableView;
     @FXML private TableColumn<PlayerCharacter, Integer> IDColumn;
     @FXML private TableColumn<PlayerCharacter, Boolean> finishedColumn;
+    @FXML private TableColumn<PlayerCharacter, String> nameColumn;
     @FXML private TableColumn<PlayerCharacter, String> raceColumn;
     @FXML private TableColumn<PlayerCharacter, String> genderColumn;
     @FXML private TableColumn<PlayerCharacter, String> professionColumn;
-    @FXML private TableColumn<PlayerCharacter, Map<String, Integer>> strengthColumn;
+    @FXML private TableColumn<PlayerCharacter, Map<String, Integer>> statsColumn;
     @FXML private TableColumn<PlayerCharacter, Map<String, Integer>> skillColumn;
     @FXML private TableColumn<PlayerCharacter, Map<String, Integer>> equipmentColumn;
 
@@ -38,10 +39,11 @@ public class CharacterListController implements Initializable {
         // Column set up
         IDColumn.setCellValueFactory(new PropertyValueFactory<PlayerCharacter, Integer>("ID"));
         finishedColumn.setCellValueFactory(new PropertyValueFactory<PlayerCharacter, Boolean>("Finished"));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<PlayerCharacter, String>("Name"));
         raceColumn.setCellValueFactory(new PropertyValueFactory<PlayerCharacter, String>("Race"));
         genderColumn.setCellValueFactory(new PropertyValueFactory<PlayerCharacter, String>("Gender"));
         professionColumn.setCellValueFactory(new PropertyValueFactory<PlayerCharacter, String>("Profession"));
-        strengthColumn.setCellValueFactory(new PropertyValueFactory<>("Stats"));
+        statsColumn.setCellValueFactory(new PropertyValueFactory<>("Stats"));
         skillColumn.setCellValueFactory(new PropertyValueFactory<>("Skills"));
         equipmentColumn.setCellValueFactory(new PropertyValueFactory<>("Equipment"));
         //Data loading
