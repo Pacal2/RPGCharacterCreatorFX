@@ -80,6 +80,9 @@ public class CharacterCreationSkillsController implements Initializable {
         }
         PlayerCharacter playerCharacter = playerCharacterList.get(playerCharacterList.size()-1);
 
+        //Reset skills
+        playerCharacter.skillReset();
+
         // Assign class bonuses
         String playerClass = playerCharacter.getProfession();
         int classBonus = 10;

@@ -20,7 +20,10 @@
                 </Label>
                 <HBox prefHeight="67.0" prefWidth="380.0">
                <children>
-                  <TextArea fx:id="nameTextArea" prefHeight="51.0" prefWidth="242.0" />
+                  <TextArea fx:id="nameTextArea" prefHeight="25.0" prefWidth="242.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font></TextArea>
                </children>
                 </HBox>
             </children>

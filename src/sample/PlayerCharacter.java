@@ -26,14 +26,11 @@ public class PlayerCharacter implements Serializable {
     private boolean finished = false;
 
     public PlayerCharacter() {
-        // basic attributes
-        int baseStatAmount = 1;
-        this.stats.put("Strength", baseStatAmount);
-        this.stats.put("Dexterity", baseStatAmount);
-        this.stats.put("Endurance", baseStatAmount);
-        this.stats.put("Intelligence", baseStatAmount);
-        this.stats.put("Charisma", baseStatAmount);
-        this.stats.put("Perception", baseStatAmount);
+        statReset();
+        skillReset();
+    }
+
+    public void skillReset() {
         // skills
         int baseSkillAmount = 10;
         // physical skins
@@ -54,7 +51,17 @@ public class PlayerCharacter implements Serializable {
         this.skills.put("Speech", baseSkillAmount);
         //equipment
         this.equipment = new ArrayList<>();
+    }
 
+    public void statReset() {
+        // basic attributes
+        int baseStatAmount = 1;
+        this.stats.put("Strength", baseStatAmount);
+        this.stats.put("Dexterity", baseStatAmount);
+        this.stats.put("Endurance", baseStatAmount);
+        this.stats.put("Intelligence", baseStatAmount);
+        this.stats.put("Charisma", baseStatAmount);
+        this.stats.put("Perception", baseStatAmount);
     }
 
     public PlayerCharacter(String name, String race, String profession, int strength, int dexterity, int endurance, int intelligence, int charisma, int perception) {
@@ -186,4 +193,5 @@ public class PlayerCharacter implements Serializable {
     public void setFinished(boolean finished) {
         this.finished = finished;
     }
+
 }

@@ -73,6 +73,9 @@ public class CharacterCreationStatsController implements Initializable {
         }
         PlayerCharacter playerCharacter = playerCharacterList.get(playerCharacterList.size()-1);
 
+        //Reset stats
+        playerCharacter.statReset();
+
         // Assign racial bonuses
         String playerRace = playerCharacter.getRace();
         int classBonus = 1;
